@@ -1,0 +1,30 @@
+  int redPin = 9 ;
+  int bluePin= 10;
+  int greenPin= 11;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  for(int n=0; n<255; n++){
+    int light = analogRead(5);
+    int l = abs((light/4)-255); //higher if darker,
+    int r = random(255);
+    int g = random(255);
+    int b = random(255);
+    analogWrite(redPin, r);
+    analogWrite(greenPin, g);
+    analogWrite(bluePin, b);
+    Serial.print(light);
+    Serial.print("\n");
+    delay(1000);
+  }
+
+  delay(40);
+}
