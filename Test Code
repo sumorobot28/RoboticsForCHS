@@ -19,7 +19,7 @@ void loop() {
     int g = random(255);
     int b = random(255);
     analogWrite(redPin, r);
-    analogWrite(greenPin, g);
+    analogWrite(greenPin, g)
     analogWrite(bluePin, b);
     Serial.print(light);
     Serial.print("\n");
